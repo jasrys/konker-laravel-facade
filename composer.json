@@ -1,0 +1,41 @@
+{
+    "name": "jasrys/konker-laravel-facade",
+    "description": ":package_description",
+    "license": "none",
+    "authors": [
+        {
+            "name": "Jason Rys",
+            "email": "jasonrys@hey.com",
+            "homepage": "https://jasonrys.com"
+        }
+    ],
+    "homepage": "https://github.com/jasrys/konker-laravel-facade",
+    "keywords": ["Laravel", "KonkerLaravelFacade"],
+    "require": {
+        "illuminate/support": "~7|~8"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~9.0",
+        "orchestra/testbench": "~5|~6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Jasrys\\KonkerLaravelFacade\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Jasrys\\KonkerLaravelFacade\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Jasrys\\KonkerLaravelFacade\\KonkerLaravelFacadeServiceProvider"
+            ],
+            "aliases": {
+                "KonkerLaravelFacade": "Jasrys\\KonkerLaravelFacade\\Facades\\KonkerLaravelFacade"
+            }
+        }
+    }
+}
