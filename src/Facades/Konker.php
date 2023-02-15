@@ -13,12 +13,12 @@ class Konker extends Facade
 
     public static function getToken()
     {
-        return env('KONKER_ACCESS_TOKEN');
+        return config('konker-laravel-facade.konker_token');
     }
 
     public static function getBaseApiUrl()
     {
-        return static::addTrailingSlashIfMissing(env('KONKER_BASE_URL'));
+        return static::addTrailingSlashIfMissing(config('konker-laravel-facade.konker_url'));
     }
 
     protected static function addTrailingSlashIfMissing($url)

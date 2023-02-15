@@ -19,9 +19,16 @@ class KonkerLaravelFacadeServiceProvider extends ServiceProvider
         // $this->loadRoutesFrom(__DIR__.'/routes.php');
 
         // Publishing is only necessary when using the CLI.
-        if ($this->app->runningInConsole()) {
+        /*if ($this->app->runningInConsole()) {
             $this->bootForConsole();
-        }
+        }*/
+
+        // Always Publish the config file, we use that for env var loading
+        $this->publishes([
+            __DIR__.'/../config/konker-laravel-facade.php' => config_path('konker-laravel-facade.php'),
+        ], 'konker-laravel-facade.config');
+
+
     }
 
     /**
@@ -57,9 +64,9 @@ class KonkerLaravelFacadeServiceProvider extends ServiceProvider
     protected function bootForConsole(): void
     {
         // Publishing the configuration file.
-        $this->publishes([
+        /*$this->publishes([
             __DIR__.'/../config/konker-laravel-facade.php' => config_path('konker-laravel-facade.php'),
-        ], 'konker-laravel-facade.config');
+        ], 'konker-laravel-facade.config');*/
 
         // Publishing the views.
         /*$this->publishes([
